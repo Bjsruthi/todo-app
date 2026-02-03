@@ -1,0 +1,169 @@
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
+
+body {
+background: linear-gradient(150deg,#0E21A0 0%,#4D2FB2 45%,#B153D7 80%,#ea76bd 100%);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container {
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(15px);
+padding:25px;
+width:320px;
+border-radius:20px;
+text-align:center;
+color:white;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+#streak {
+display:inline-block;
+padding:6px 14px;
+background:rgba(255,255,255,0.25);
+border-radius:30px;
+font-size:16px;
+margin-bottom:10px;
+}
+
+.progress-container {
+position:relative;
+margin:auto;
+width:120px;
+height:120px;
+}
+
+svg {
+transform:rotate(-90deg);
+}
+
+circle {
+fill:none;
+stroke-width:10;
+}
+
+.bg {
+stroke:rgba(255,255,255,0.3);
+}
+
+.progress {
+stroke:#F375C2;
+stroke-linecap:round;
+stroke-dasharray:314;
+stroke-dashoffset:314;
+transition:.4s;
+filter:drop-shadow(0 0 8px #F375C2);
+}
+
+#percent {
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:18px;
+}
+
+h1 {
+margin:10px 0 15px;
+font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;
+color:white;
+}
+
+.add-task {
+display:flex;
+gap:8px;
+margin-bottom:15px;
+}
+
+input {
+flex:1;
+padding:10px;
+border-radius:10px;
+border:none;
+outline:none;
+}
+
+button {
+padding:10px 15px;
+border:none;
+border-radius:10px;
+background:#0E21A0;
+color:white;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover {
+transform:scale(1.05);
+}
+
+ul {
+list-style:none;
+}
+
+li {
+background: rgba(255,255,255,0.2);
+margin-bottom:10px;
+padding:10px;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+color:white;
+transition:.2s;
+}
+
+li:hover {
+transform:scale(1.02);
+}
+
+.task-left {
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+input[type="checkbox"] {
+width:18px;
+height:18px;
+accent-color:#F375C2;
+}
+
+.done {
+text-decoration:line-through;
+opacity:.6;
+}
+
+.actions button {
+background:transparent;
+border:none;
+font-size:16px;
+cursor:pointer;
+color:white;
+}
+
+#star {
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-size:90px;
+pointer-events:none;
+}
+
+.star-show {
+animation:pop 1.2s ease;
+}
+
+@keyframes pop {
+0% {transform:translate(-50%,-50%) scale(0);}
+50% {transform:translate(-50%,-50%) scale(1.4);}
+100% {transform:translate(-50%,-50%) scale(0);}
+}

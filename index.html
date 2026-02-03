@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Todo</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="streak">🔥 0</div>
+
+<div class="progress-container">
+<svg width="120" height="120">
+<circle cx="60" cy="60" r="50" class="bg"/>
+<circle cx="60" cy="60" r="50" class="progress" id="progressRing"/>
+</svg>
+<div id="percent">0%</div>
+</div>
+
+<h1>My Daily Routine</h1>
+
+<div class="add-task">
+<input id="taskInput" placeholder="Add new task">
+<button onclick="addTask()">Add</button>
+</div>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<div id="star">⭐</div>
+
+<script src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+navigator.serviceWorker.register("sw.js");
+}
+</script>
+
+</body>
+</html>
