@@ -8,7 +8,7 @@ let lastWin = localStorage.getItem("lastWin");
 if(!data[today]){
 const prev = Object.keys(data).pop();
 data[today] = prev ? data[prev].map(t=>({name:t.name,done:false})) :
-DEFAULT.map(t=>({name:t,done:false}));
+DEFAULT_TASKS.map(t=>({name:t,done:false}));
 save();
 }
 
@@ -41,7 +41,7 @@ document.getElementById("streak").innerText=`🔥 ${streak}`;
 }
 
 function addTask(){
-const v=taskInput.value.trim();
+const v = taskInput.value.trim();
 if(!v) return;
 data[today].push({name:v,done:false});
 taskInput.value="";
